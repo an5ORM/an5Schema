@@ -1,0 +1,7 @@
+model User {
+  id        NVARCHAR(1000) @id @default(uuid()) @description("Primary key for the User table (auto-generated UUID)")
+  email     NVARCHAR(255)  @unique @description("Unique email address used for login and notifications")
+  name      NVARCHAR(255)? @description("Display name of the user")
+  createdAt DATETIME2      @default(now()) @description("Timestamp when the user profile was created")
+  @@description("Represents a registered user in the database.")
+}

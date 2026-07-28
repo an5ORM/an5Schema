@@ -1,0 +1,11 @@
+model EmbeddingConfig {
+  id        NVARCHAR(1000)  @id @default(uuid()) @description("Primary key")
+  provider  NVARCHAR(100)   @description("Embedding provider: openai, cohere, custom")
+  apiKey    NVARCHAR(4000)  @description("API key for the embedding service")
+  model     NVARCHAR(500)?  @description("Model name, e.g. text-embedding-3-small")
+  endpoint  NVARCHAR(2000)? @description("Custom endpoint URL")
+  isActive  BIT             @default(1) @description("Whether this config is active")
+  createdAt DATETIME2       @default(now()) @description("Creation timestamp")
+  updatedAt DATETIME2       @default(now()) @description("Last update timestamp")
+  @@description("Embedding provider configuration. Stores API keys and model settings for RAG features.")
+}

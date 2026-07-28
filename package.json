@@ -1,0 +1,8 @@
+{
+  "name": "an5-schema",
+  "version": "1.0.0",
+  "description": "Schema validation and definitions",
+  "scripts": {
+    "test": "echo \"No tests for an5Schema\""
+  }
+}
