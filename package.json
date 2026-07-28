@@ -1,7 +1,15 @@
 {
   "name": "an5-schema",
   "version": "1.0.0",
-  "description": "Schema validation and definitions",
+  "description": "Schema definitions and sample .an5 files for AN5 ORM",
+  "license": "MIT",
+  "files": [
+    "*.an5",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "echo \"No tests for an5Schema\""
   }
