@@ -17,6 +17,6 @@
     "access": "public"
   },
   "scripts": {
-    "test": "echo \"No tests for an5Schema\""
+    "test": "node test/validate.test.js"
   }
 }
