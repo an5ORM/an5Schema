@@ -29,7 +29,10 @@ function test(name, fn) {
   }
 }
 
-// SQL Server types accepted by an5Orm/generator/src/parser.ts (AN5_TO_TS keys)
+// The SQL Server types from an5Orm/generator/src/field-types.ts
+// (PROVIDER_FIELD_TYPES.mssql). Valid types are per provider — the other
+// providers each have their own table there — and these sample schemas target
+// SQL Server.
 const KNOWN_TYPES = new Set([
   'NVARCHAR', 'VARCHAR', 'CHAR', 'NCHAR', 'TEXT', 'NTEXT', 'XML',
   'INT', 'SMALLINT', 'TINYINT', 'BIGINT', 'FLOAT', 'REAL',
@@ -37,6 +40,9 @@ const KNOWN_TYPES = new Set([
   'BIT',
   'DATETIME', 'DATETIME2', 'SMALLDATETIME', 'DATE', 'TIME', 'DATETIMEOFFSET',
   'VARBINARY', 'BINARY', 'IMAGE',
+  // `TIMESTAMP` is rowversion, `SYSNAME` is NVARCHAR(128); both are written by
+  // db:pull, so a pulled schema has to validate here too.
+  'TIMESTAMP', 'SYSNAME',
   'UNIQUEIDENTIFIER', 'SQL_VARIANT', 'ROWVERSION',
   'HIERARCHYID', 'GEOGRAPHY', 'GEOMETRY', 'VECTOR',
 ]);
